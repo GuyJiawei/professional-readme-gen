@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const runGenMarkdown = require('./utils/generateMarkdown')
+const runGenMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -14,80 +14,74 @@ const questions = [
     'Please select a license.',
     'How is testing performed for this project?',
     'What is your GitHub username?',
-    'What is your email address?',
-    'Any acknowledgements?'
+    'What is your email address?'
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, userInputs) {
     let markDown = runGenMarkdown(userInputs);
 
-    fs.writeFile(fileName, markDown, function(){
+    fs.writeFile(fileName, markDown, function() {
         console.log('Success! README.md has been generated.')
-    })
+    });
 }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-        .createPromptModule([
+        .prompt([
             {
                 type: 'input',
                 name: 'title',
-                message: 'questions[0]'
+                message: questions[0]
             },
             {
                 type: 'input',
                 name: 'description',
-                message: 'questions[1]'
+                message: questions[1]
             },
             {
                 type: 'input',
                 name: 'installation',
-                message: 'questions[2]'
+                message: questions[2]
             },
             {
                 type: 'input',
                 name: 'usage',
-                message: 'questions[3]'
+                message: questions[3]
             },
             {
                 type: 'input',
                 name: 'contribution',
-                message: 'questions[4]'
+                message: questions[4]
             },
             {
                 type: 'list',
                 name: 'license',
-                message: 'questions[5]',
-                choices: ['MIT', 'Apache', 'BSD-2', 'Unlicense']
+                message: questions[5],
+                choices: ['MIT', 'Apache 2.0', 'Unlicense']
             },
             {
                 type: 'input',
                 name: 'testing',
-                message: 'questions[6]'
+                message: questions[6]
             },
             {
                 type: 'input',
                 name: 'username',
-                message: 'questions[7]'
+                message: questions[7]
             },
             {
                 type: 'input',
                 name: 'email',
-                message: 'questions[8]',
+                message: questions[8],
                 default: 'smith@example.com'
-            },
-            {
-                type: 'input',
-                name: 'acknowledgments',
-                message: 'questions[9]'
             }
 
         ])
-        .then(function (userInputs){
-            console.log(userInputs);
-            writeToFile('README.md', runGenMarkdown(userInputs))
+        .then(function (answers){
+            console.log(answers);
+            writeToFile('README.md', answers)
         });
 };
 

@@ -12,13 +12,13 @@ function renderLicenseBadge(data) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
+function renderLicenseLink(data) {
   return data.license ? `https://choosealicense.com/licenses/${data.license}/` : '';
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseSection(data) {
   return data.license ? `
   ## License
   - ${data.license}
@@ -61,15 +61,13 @@ function generateMarkdown(data) {
 
   ${data.testing}
 
-  ## License
-
   ${renderLicenseSection(data)}
 
   ## Questions
 
   If you have any questions or require further information, please contact me at:
 
-  - GitHub: https://github.com${data.username}
+  - GitHub: https://github.com/${data.username}
   - Email: ${data.email}
 `;
 }
