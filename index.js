@@ -19,7 +19,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
+function writeToFile(fileName, userInputs) {
     let markDown = runGenMarkdown(userInputs);
 
     fs.writeFile(fileName, markDown, function(){
