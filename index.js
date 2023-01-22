@@ -64,7 +64,7 @@ function init() {
             },
             {
                 type: 'input',
-                name: 'testinf',
+                name: 'testing',
                 message: 'questions[6]'
             },
             {
