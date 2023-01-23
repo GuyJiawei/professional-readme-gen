@@ -7,7 +7,7 @@ const licenses = {
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
-  return data.license ? `![License Badge] (https://img.shields.io/badge/license-${data.license}-green.svg)` : '';
+  return data.license ? `![License Badge](https://img.shields.io/badge/license-${data.license}-green.svg)` : '';
 }
 
 // TODO: Create a function that returns the license link
