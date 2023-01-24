@@ -1,6 +1,6 @@
 # Professional README Generator
 
-  ![License Badge] (https://img.shields.io/badge/license-MIT-green.svg)
+  ![License Badge](https://img.shields.io/badge/license-MIT-green.svg)
 
   ## Description
   Using Node.js, create a generator to quickly produce a professional README.md
@@ -43,3 +43,7 @@
 
   - GitHub: https://github.com/GuyJiawei
   - Email: guy.jiawei.anderson@gmail.com
+
+  ## Demo
+
+  ![GIF](./assets/Demo.gif)
